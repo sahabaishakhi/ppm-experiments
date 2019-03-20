@@ -6,10 +6,10 @@
   (str
    head (clojure.string/join
          "\n"
-         (->> (range 0 2)
-              (range (dec 2) -1 -1)
+         (->> (range 0 255)
+              (range (dec 255) -1 -1)
               (fn [i] (map (fn [j]
-                       (let [x (mod i 2) y (mod j 2) z (mod (* i j) 255)]
+                       (let [x (mod i 255) y (mod j 255) z (mod (* i j) 255)]
                          (str x " " y " " z)))))
               (mapcat))
 (def second-ppm matrix)
