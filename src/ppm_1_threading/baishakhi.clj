@@ -19,17 +19,21 @@
 
                                         ;testing
 (red)
+(count (red))
 (green)
+(count (green))
 (blue)
+(count (blue))
 
 (defn image-data-vals []
-  (map str (red) (repeat " ") (green) (repeat " ") (blue) (repeat " ")))
+  (map str (red) (repeat " ") (green) (repeat " ") (blue)))
 
 (image-data-vals)
-(type (image-data-vals))
+(type (list image-data-vals))
+(count (image-data-vals))
 
 (defn image-data []
-  (clojure.string/join "\n" image-data-vals))
+  (clojure.string/join " " (list image-data-vals)))
 
 (image-data)
 
@@ -38,3 +42,5 @@
 (ppm-content)
 
 (spit "threadppmdemo.ppm" ppm-content)
+
+                                        ;(spit "threadppmdemo.ppm" (str head "\n" "0 0 255 255 0 0 0 255 0 255 0 0"))
